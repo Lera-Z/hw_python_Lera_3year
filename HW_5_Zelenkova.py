@@ -25,12 +25,10 @@ def add_word_to_class(line):
         word = Word(wordform)
     return word
 
-
+punct = ',.!?:;)(+-="\/|@#§%& '
 all_words = []
 for line in text:
     word = add_word_to_class(line)
-    all_words.append(word)
+    if word.wordform not in punct:
+        all_words.append(word)
 
-'''
-в all_words добавляются все токены подряд, в т.ч. пробелы
-'''
