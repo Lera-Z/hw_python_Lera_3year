@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вот мой сайт</title>
+    <style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </style>
+</head>
+<body>
+<h1>Привет, мир!</h1>
+<p>Список страниц на этом сайте:</p>
+<ul>
+    {% for name, url in urls.items() %}
+    <li><a href="{{ url }}">{{ name }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
